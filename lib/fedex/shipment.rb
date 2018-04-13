@@ -9,6 +9,7 @@ require 'fedex/request/ground_close'
 require 'fedex/request/pickup'
 require 'fedex/request/pickup_availability'
 require 'fedex/request/service_availability'
+require 'fedex/request/locations'
 
 module Fedex
   class Shipment
