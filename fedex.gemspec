@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.summary     = %q{Fedex Web Services}
   s.description = %q{Provides an interface to Fedex Web Services}
 
-  s.rubyforge_project = 'fedex'
-
   s.license = 'MIT'
+
+  s.required_ruby_version = '>= 2.3.0'
 
   s.add_dependency 'httparty',            '>= 0.14.0'
   s.add_dependency 'nokogiri',            '>= 1.5.6'
