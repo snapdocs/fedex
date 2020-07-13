@@ -32,7 +32,7 @@ module Fedex
         if success?(response)
           options = response[:track_reply][:track_details]
 
-          if response[:track_reply][:duplicate_waybill].downcase == 'true'
+          if response[:track_reply][:duplicate_waybill]&.downcase == 'true'
             shipments = []
             [options].flatten.map do |details|
               options = {:tracking_number => @package_id, :uuid => details[:tracking_number_unique_identifier]}
