@@ -32,6 +32,10 @@ module Fedex
         if success?(response)
           options = response[:track_reply][:track_details]
 
+          if options.nil? && response[:track_reply][:duplicate_waybill].nil?
+            raise RateError, 'Response was successful but data is missing'
+          end
+
           if response[:track_reply][:duplicate_waybill]&.downcase == 'true'
             shipments = []
             [options].flatten.map do |details|
